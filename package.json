@@ -1,0 +1,51 @@
+{
+  "name": "pi-agents",
+  "description": "A generic framework for agent orchestration in pi.",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "extensions",
+    "README.md"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "coding-agent",
+    "agent-orchestration",
+    "tenzir"
+  ],
+  "author": "Tenzir",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tenzir/pi-agents.git"
+  },
+  "homepage": "https://github.com/tenzir/pi-agents#readme",
+  "bugs": {
+    "url": "https://github.com/tenzir/pi-agents/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+
+  "scripts": {
+    "format": "bunx @biomejs/biome format --write extensions tests",
+    "format:check": "bunx @biomejs/biome format extensions tests",
+    "lint": "bunx @biomejs/biome lint extensions tests",
+    "lint:fix": "bunx @biomejs/biome lint --write extensions tests",
+    "biome:check": "bunx @biomejs/biome check extensions tests",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "check": "bun run typecheck && bun run test && bun run biome:check"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@sinclair/typebox": "*",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  },
+  "pi": {
+    "extensions": ["./extensions/agent"]
+  }
+}
